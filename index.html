@@ -28,6 +28,7 @@
 
     <nav id="navbar">
         <a class="nav-logo" href="#home">
+            <!-- Removed invert filter assuming logo is now dark for light theme, or swap logic in CSS -->
             <img src="/assests/pixel_art_logo-01.png" alt="PixelArt Logo" class="nav-logo-img">
         </a>
         <ul class="nav-links">
@@ -181,6 +182,16 @@
         </div>
     </section>
 
+    <section id="clients">
+        <div class="clients-header reveal">
+            <div class="section-label">Trusted By</div>
+            <h2 class="section-title">Our Respected <span class="accent">Clients</span></h2>
+        </div>
+        <div class="clients-logo-wrap reveal-scale">
+            <img src="assests/pixel_art_client_list-01.png" alt="Our Respected Clients">
+        </div>
+    </section>
+
     <section id="industries">
         <div class="industries-wrap">
             <div>
@@ -237,21 +248,13 @@
             </div>
         </div>
     </section>
-    
-    <section id="clients">
-        <div class="clients-header reveal">
-            <div class="section-label">Trusted By</div>
-            <h2 class="section-title">Our Respected <span class="accent">Clients</span></h2>
-        </div>
-        <div class="clients-logo-wrap reveal-scale">
-            <img src="assests/pixel_art_client_list-01.png" alt="Our Respected Clients">
-        </div>
-    </section>
-    
+
+
     <section id="contact" class="contact-section">
 
         <div class="contact-left reveal-left">
             <div class="contact-left-inner">
+                <!-- Use standard logo color, assuming it's dark text -->
                 <img src="assests/pixel_art_logo-01.png" alt="PixelArt" class="contact-logo">
                 <p class="contact-tagline">Let's build something<br><span>remarkable together.</span></p>
 
@@ -302,7 +305,7 @@
 
         <div class="contact-right reveal-right">
             <div class="contact-form-wrap">
-                <div class="section-label" style="color:var(--teal)">Get In Touch</div>
+                <div class="section-label" style="color:var(--primary)">Get In Touch</div>
                 <h2 class="contact-form-title">Send Us a <span class="accent">Message</span></h2>
                 <p class="contact-form-sub">Our team will respond within 24 hours.</p>
 
@@ -310,7 +313,7 @@
                     <div class="form-two-col">
                         <div class="form-field">
                             <label>Full Name</label>
-                            <input type="text" placeholder="Ahmed Khan" required>
+                            <input type="text" placeholder="UserName" required>
                         </div>
                         <div class="form-field">
                             <label>Email Address</label>
