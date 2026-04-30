@@ -1,3 +1,4 @@
+// ── CUSTOM CURSOR ──────────────────────────────────────────
 const cursor = document.getElementById('cursor');
 const ring   = document.getElementById('cursorRing');
 let mx = 0, my = 0, rx = 0, ry = 0;
@@ -27,6 +28,7 @@ hoverEls.forEach(el => {
     });
 });
 
+// ── NAV SCROLL + BACK TO TOP ───────────────────────────────
 const navbar  = document.getElementById('navbar');
 const backTop = document.getElementById('backTop');
 
@@ -38,6 +40,7 @@ window.addEventListener('scroll', () => {
 
 backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
+// ── MOBILE MENU ────────────────────────────────────────────
 const hamburger  = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 document.getElementById('mobileClose').addEventListener('click', closeMobile);
@@ -50,6 +53,7 @@ function closeMobile() {
     mobileMenu.classList.remove('open');
 }
 
+// ── SCROLL REVEAL ──────────────────────────────────────────
 const revealObs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
         if (e.isIntersecting) {
@@ -62,6 +66,7 @@ const revealObs = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger')
         .forEach(el => revealObs.observe(el));
 
+// ── ACTIVE NAV LINKS ───────────────────────────────────────
 const sections = document.querySelectorAll('section[id]');
 const navLinks  = document.querySelectorAll('.nav-links a');
 
@@ -76,6 +81,7 @@ const activeObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
 sections.forEach(s => activeObs.observe(s));
 
+// ── COUNTER ANIMATION ──────────────────────────────────────
 const countEls = document.querySelectorAll('[data-count]');
 const countObs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -98,14 +104,6 @@ const countObs = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.6 });
 countEls.forEach(el => countObs.observe(el));
-document.getElementById('contactForm').addEventListener('submit', e => {
-    e.preventDefault();
-    const btnText = e.target.querySelector('.btn-text');
-    btnText.textContent = '✓ Message Sent!';
-    e.target.querySelector('.btn-send').style.pointerEvents = 'none';
-    setTimeout(() => {
-        btnText.textContent = 'Send Message';
-        e.target.querySelector('.btn-send').style.pointerEvents = '';
-        e.target.reset();
-    }, 3500);
-});
+
+// ── FORM SUBMIT ────────────────────────────────────────────
+document.getElementById('contactForm').addEventListener
